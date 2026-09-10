@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Gamut Mapping Preserves Video Highlight Details - video-production</title>
+    <meta name="description" content="Gamut mapping is an essential color management process in video post-production that translates wide-gamut source material into the smaller color spaces of various consumer screens. This article explains how modern gamut mapping algorithms compress color">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/how-gamut-mapping-preserves-video-highlight-details">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Gamut Mapping Preserves Video Highlight Details - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/how-gamut-mapping-preserves-video-highlight-details" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Gamut mapping is an essential color management process in video post-production that translates wide-gamut source material into the smaller color spaces of various consumer screens. This article explains how modern gamut mapping algorithms compress color" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-gamut-mapping-preserves-video-highlight-details">How Gamut
+Mapping Preserves Video Highlight Details</h1>
+<p>Gamut mapping is an essential color management process in video
+post-production that translates wide-gamut source material into the
+smaller color spaces of various consumer screens. This article explains
+how modern gamut mapping algorithms compress color volumes, maintain hue
+fidelity, and prevent clipping to preserve critical highlight textures
+and specular details when mastering for multiple displays.</p>
+<p>In modern video production, content is frequently captured and
+mastered in Wide Color Gamut (WCG) and High Dynamic Range (HDR) formats,
+such as ACES, Rec. 2020, or DCI-P3. However, consumer viewing
+environments vary wildly, ranging from high-end HDR televisions capable
+of 1,000 nits or more to standard dynamic range (SDR) Rec. 709 screens
+and mobile displays. The brightest areas of an image—such as specular
+glints, explosions, neon signage, and skies—typically combine extreme
+luminance with intense saturation, positioning them at the outermost
+boundaries of a color volume.</p>
+<p>Without intelligent mapping, displaying wide-gamut highlights on a
+narrower-gamut screen results in hard clipping. Clipping truncates any
+color or brightness value that exceeds the target display’s physical
+capabilities. When an out-of-gamut highlight is clipped, subtle
+gradations within the bright region are flattened into uniform, solid
+patches of color or pure white, destroying the texture and depth
+intended by the colorist.</p>
+<p>Gamut mapping prevents this loss by using algorithmic compression
+rather than hard limits. Instead of abruptly cutting off out-of-gamut
+values, soft-knee compression functions begin gently rolling off
+saturation and luminance before reaching the destination gamut boundary.
+This roll-off scales both in-gamut and out-of-gamut highlight values
+proportionately, packing them smoothly into the available space while
+preserving the relative differences between adjacent pixels.</p>
+<p>A key factor in preserving highlight details during this process is
+retaining perceptual hue linearity. As luminance and saturation are
+compressed, human vision is prone to perceiving artificial color
+shifts—an issue known as the Abney effect. Advanced gamut mapping
+algorithms, such as the ACES Gamut Compression framework, compress
+colors along constant hue vectors toward an achromatic or tone-mapped
+target. This ensures that a bright orange flame, for instance, maintains
+its distinct core highlights and soft edge falloffs without shifting
+toward an unnatural yellow or magenta.</p>
+<p>Furthermore, multi-display mastering relies on standardized color
+volume transformation models, often guided by dynamic metadata such as
+Dolby Vision or HDR10+. These frameworks analyze shot-by-shot luminance
+and chrominance extremes, calculating precise mapping curves tailored to
+the receiving display's specific peak brightness and color coverage. By
+dynamically prioritizing the contrast relationships inside
+high-luminance regions, the system guarantees that highlight roll-offs,
+cloud textures, and light sources remain visually defined and creatively
+consistent across high-end HDR monitors and baseline SDR displays
+alike.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

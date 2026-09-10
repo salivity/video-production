@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Does Conforming Match Offline Edits to Masters? - video-production</title>
+    <meta name="description" content="Conforming is the post-production process that replaces low-resolution proxy clips used during creative editing with raw, full-resolution camera files or high-bitrate archival media. By utilizing metadata-rich interchange formats such as XML, AAF, or EDL">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/how-does-conforming-match-offline-edits-to-masters">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Does Conforming Match Offline Edits to Masters? - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/how-does-conforming-match-offline-edits-to-masters" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Conforming is the post-production process that replaces low-resolution proxy clips used during creative editing with raw, full-resolution camera files or high-bitrate archival media. By utilizing metadata-rich interchange formats such as XML, AAF, or EDL" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-does-conforming-match-offline-edits-to-masters">How Does
+Conforming Match Offline Edits to Masters?</h1>
+<p>Conforming is the post-production process that replaces
+low-resolution proxy clips used during creative editing with raw,
+full-resolution camera files or high-bitrate archival media. By
+utilizing metadata-rich interchange formats such as XML, AAF, or EDL
+files, finishing systems read the precise cut points, reel names, and
+timecode information established during the offline edit. This workflow
+ensures that colorists, visual effects artists, and finishing editors
+work with the highest-fidelity source media while preserving the
+creative timing, framing, and pacing of the approved picture cut.</p>
+<h2 id="the-separation-of-offline-and-online-editing">The Separation of
+Offline and Online Editing</h2>
+<p>Modern digital cinema cameras record in heavy RAW or uncompressed
+formats with high resolutions like 4K, 6K, or 8K. Editing directly with
+these high-bitrate files strains local storage, network bandwidth, and
+hardware playback performance.</p>
+<p>To maintain real-time responsiveness, editorial teams generate
+lightweight proxy media—typically ProRes Proxy or DNxHR LB files—with
+synchronized timecode and matching clip names. The creative editorial
+process takes place entirely with these proxies (the offline cut). Once
+the director and producers declare a "picture lock," the timeline must
+undergo conforming (the online edit) to reconnect every cut to the
+original camera files (OCF).</p>
+<h2 id="core-metadata-used-to-relink-media">Core Metadata Used to Relink
+Media</h2>
+<p>Conforming relies on standardized interchange files (XML, AAF, or
+EDL) exported from non-linear editing systems (NLEs) like Adobe Premiere
+Pro, Apple Final Cut Pro, or Avid Media Composer. Finishing software,
+such as DaVinci Resolve or FilmLight Baselight, parses these files and
+matches clips using specific primary metadata points:</p>
+<ul>
+<li><strong>Source Timecode:</strong> Ensures the exact in-point and
+out-point frames correspond identically between the proxy and raw
+file.</li>
+<li><strong>Reel or Tape Name:</strong> Identifies the specific camera
+card, roll, or recording reel from which the clip originated.</li>
+<li><strong>Clip Name and File ID:</strong> Distinguishes unique shots
+and camera takes.</li>
+<li><strong>Frame Rate:</strong> Maintains synchronized audio and
+frame-by-frame pacing across standard project frame rates.</li>
+</ul>
+<p>When the finishing software imports the interchange document
+alongside the folder of raw camera files, it performs an automated
+relink by searching the target directory for media that matches these
+combined metadata criteria.</p>
+<h2 id="translating-effects-transforms-and-speed-changes">Translating
+Effects, Transforms, and Speed Changes</h2>
+<p>A successful conform involves more than just swapping video files.
+The finishing artist must recreate or verify complex editorial
+manipulations applied in the offline cut:</p>
+<ul>
+<li><strong>Sizing and Framing:</strong> Resizing, cropping, reframing,
+and aspect-ratio adjustments must map correctly from lower proxy
+resolutions to native camera dimensions.</li>
+<li><strong>Retime Effects:</strong> Speed ramps, freeze frames, and
+variable motion effects require matching interpolation methods (such as
+optical flow or frame blending) to prevent timing drift.</li>
+<li><strong>Transitions and Composite Modes:</strong> Dissolves, opacity
+changes, and multi-layer blending modes must translate accurately into
+the finishing environment.</li>
+<li><strong>Stabilization and Noise Reduction:</strong> Dynamic spatial
+processing is often redone on the raw image data to maximize quality and
+avoid processing low-resolution compression artifacts.</li>
+</ul>
+<h2 id="quality-control-with-offline-reference-files">Quality Control
+with Offline Reference Files</h2>
+<p>To guarantee complete accuracy between the offline cut and the
+conformed online timeline, the offline editor exports a reference video
+containing burned-in timecode (BITC) from the source clips and the
+master timeline.</p>
+<p>The finishing artist loads this reference video directly above the
+conformed master timeline and uses visual verification techniques, such
+as difference mattes or 50% opacity overlays. If any frame shows
+alignment errors, slipping timecode, missed re-framing, or missing cuts,
+the visual difference immediately appears on the monitor. Once every
+frame matches the reference video perfectly, the conform is complete,
+and the project proceeds to color grading, VFX compositing, and final
+master file delivery.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

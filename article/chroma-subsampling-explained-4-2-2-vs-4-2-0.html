@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chroma Subsampling Explained: 4:2:2 vs 4:2:0 - video-production</title>
+    <meta name="description" content="Chroma subsampling is a video compression technique that reduces color resolution to save bandwidth and storage while preserving overall image brightness. This article breaks down the technical differences between 4:2:2 and 4:2:0 subsampling, explaining">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/chroma-subsampling-explained-4-2-2-vs-4-2-0">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chroma Subsampling Explained: 4:2:2 vs 4:2:0 - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/chroma-subsampling-explained-4-2-2-vs-4-2-0" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Chroma subsampling is a video compression technique that reduces color resolution to save bandwidth and storage while preserving overall image brightness. This article breaks down the technical differences between 4:2:2 and 4:2:0 subsampling, explaining" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="chroma-subsampling-explained-422-vs-420">Chroma Subsampling
+Explained: 4:2:2 vs 4:2:0</h1>
+<p>Chroma subsampling is a video compression technique that reduces
+color resolution to save bandwidth and storage while preserving overall
+image brightness. This article breaks down the technical differences
+between 4:2:2 and 4:2:0 subsampling, explaining how the reduction of
+color information directly influences color fidelity, post-production
+flexibility, visual effects workflows, and final playback quality in
+video production.</p>
+<h3 id="understanding-the-numbers">Understanding the Numbers</h3>
+<p>The human visual system is far more sensitive to variations in
+brightness (luminance) than to variations in color (chrominance). Video
+encoders exploit this trait by encoding brightness (<span
+class="math inline">\(Y\)</span>) at full resolution while sampling
+color (<span class="math inline">\(Cb\)</span> and <span
+class="math inline">\(Cr\)</span>) at lower resolutions.</p>
+<p>Chroma subsampling is expressed as a three-part ratio (<span
+class="math inline">\(J:a:b\)</span>) based on a conceptual grid of four
+pixels wide by two pixels tall:</p>
+<ul>
+<li><strong><span class="math inline">\(J\)</span> (Reference
+width):</strong> Always 4, representing the horizontal width of the
+sample grid.</li>
+<li><strong><span class="math inline">\(a\)</span> (Top row color
+samples):</strong> The number of chrominance samples taken in the top
+row of four pixels.</li>
+<li><strong><span class="math inline">\(b\)</span> (Bottom row color
+samples):</strong> The number of chrominance samples taken in the bottom
+row of four pixels.</li>
+</ul>
+<p>In a <strong>4:4:4</strong> setup, every single pixel has its own
+distinct color and brightness value, retaining 100% of color
+information.</p>
+<p>In <strong>4:2:2</strong>, color is sampled at half the horizontal
+resolution while keeping full vertical resolution. This retains 50% of
+the original color data compared to uncompressed video.</p>
+<p>In <strong>4:2:0</strong>, color is sampled at half the horizontal
+resolution and half the vertical resolution. This setup retains only 25%
+of the original color information.</p>
+<h3 id="direct-impact-on-color-fidelity">Direct Impact on Color
+Fidelity</h3>
+<p>Color fidelity refers to how accurately and cleanly colors are
+reproduced relative to the source. The difference between 4:2:2 and
+4:2:0 manifests in several distinct ways:</p>
+<h4 id="1-color-grading-and-dynamic-range">1. Color Grading and Dynamic
+Range</h4>
+<p>When shooting video destined for heavy color manipulation, 4:2:2
+provides a far denser grid of chromatic data. In 4:2:0 footage, pushing
+saturation, changing color hues, or isolating specific tones (such as
+skin tones) frequently reveals color banding, macroblocking, and
+pixelation. Because 4:2:2 preserves twice as much color data, gradients
+remain smoother when stretching the dynamic range in
+post-production.</p>
+<h4 id="2-chroma-keying-and-visual-effects">2. Chroma Keying and Visual
+Effects</h4>
+<p>Chroma keying relies on precise color borders to separate a subject
+from a green or blue screen.</p>
+<ul>
+<li><strong>4:2:0:</strong> Because color boundaries are averaged across
+2x2 pixel blocks, high-contrast borders—such as stray hairs, fine fabric
+textures, or motion-blurred limbs—become jagged or muddy. This leads to
+color fringing and difficult keys.</li>
+<li><strong>4:2:2:</strong> Retaining full vertical color resolution
+yields clean, sharp edges that key cleanly without requiring extensive
+edge refinement or garbage matting.</li>
+</ul>
+<h4 id="3-high-contrast-color-transitions-and-text">3. High-Contrast
+Color Transitions and Text</h4>
+<p>In standard viewing, 4:2:0 is virtually indistinguishable from 4:2:2
+in natural scenes. However, sharp, high-contrast color boundaries expose
+4:2:0 limitations immediately. Pure red text over a black background or
+sharp geometric graphics will appear blurry, pixelated, or
+artifact-heavy in 4:2:0 due to the missing color samples. 4:2:2
+preserves edge crispness across these contrasting color zones.</p>
+<h3 id="choosing-between-422-and-420">Choosing Between 4:2:2 and
+4:2:0</h3>
+<ul>
+<li><strong>Capture in 4:2:2</strong> whenever footage requires color
+correction, log-profile grading, green-screen compositing, or mastering
+for broadcast television and cinema distribution.</li>
+<li><strong>Deliver in 4:2:0</strong> for final consumer distribution.
+Web streaming platforms (like YouTube and Vimeo), Blu-ray discs, and
+broadcast standards universally downsample to 4:2:0 to minimize file
+size and streaming bandwidth without significant perceptual loss to the
+viewer.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

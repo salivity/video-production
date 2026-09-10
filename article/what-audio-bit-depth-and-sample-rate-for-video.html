@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Audio Bit Depth and Sample Rate for Video? - video-production</title>
+    <meta name="description" content="Selecting the proper sample rate and bit depth determines dynamic range, frequency response, and audio-video synchronization across post-production workflows. While video production standards traditionally lock delivery to 48 kHz / 24-bit PCM audio, reco">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/what-audio-bit-depth-and-sample-rate-for-video">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="What Audio Bit Depth and Sample Rate for Video? - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/what-audio-bit-depth-and-sample-rate-for-video" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Selecting the proper sample rate and bit depth determines dynamic range, frequency response, and audio-video synchronization across post-production workflows. While video production standards traditionally lock delivery to 48 kHz / 24-bit PCM audio, reco" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="what-audio-bit-depth-and-sample-rate-for-video">What Audio Bit
+Depth and Sample Rate for Video?</h1>
+<p>Selecting the proper sample rate and bit depth determines dynamic
+range, frequency response, and audio-video synchronization across
+post-production workflows. While video production standards
+traditionally lock delivery to 48 kHz / 24-bit PCM audio, recording at
+higher resolutions provides headroom for sound design, intensive
+pitch-shifting, and noise reduction. Choosing the wrong parameters
+introduces aliasing artifacts, truncation distortion, or subtle sync
+drift across non-integer frame rates.</p>
+<h2 id="the-role-of-sample-rate-in-video-synchronization">The Role of
+Sample Rate in Video Synchronization</h2>
+<p>Sample rate defines the number of audio snapshots captured per
+second, directly governing the highest reproducible frequency via the
+Nyquist-Shannon sampling theorem. Frequencies above half the sample rate
+must be filtered out before analog-to-digital conversion to prevent
+in-band foldover distortion known as aliasing.</p>
+<ul>
+<li><strong>48 kHz (Broadcast Standard):</strong> Offers clean capture
+up to 24 kHz (surpassing human hearing limits) while aligning with
+fractional video frame rates (such as 23.976, 29.97, and 59.94 fps).
+Every video frame contains an integer or near-integer number of audio
+samples, preventing timeline drift.</li>
+<li><strong>44.1 kHz (CD Standard):</strong> Common in standalone music
+releases, but using 44.1 kHz on a standard 24 or 29.97 fps timeline
+forces real-time sample rate conversion. This often leads to cumulative
+drift or inter-frame sync errors over long takes.</li>
+<li><strong>96 kHz / 192 kHz (High-Resolution Production):</strong>
+Extends capture into ultrasonic frequencies. When slow-motion footage
+requires extreme pitch-down time-stretching, high-frequency data shifts
+into the audible spectrum without losing clarity or introducing grainy
+artifacts.</li>
+</ul>
+<h2 id="bit-depth-dynamic-range-and-quantization">Bit Depth, Dynamic
+Range, and Quantization</h2>
+<p>Bit depth dictates the resolution of each sample's amplitude
+measurement. Each bit adds roughly 6 dB of dynamic range between the
+loudest unclipped signal and the system's inherent digital noise
+floor.</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Dynamic Range</th>
+<th>Noise Floor Behavior</th>
+<th>Best Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>16-bit Fixed</strong></td>
+<td>~96 dB</td>
+<td>Audible dither noise when amplifying quiet signals</td>
+<td>Legacy delivery, bandwidth-limited streaming</td>
+</tr>
+<tr>
+<td><strong>24-bit Fixed</strong></td>
+<td>~144 dB</td>
+<td>Noise floor well below analog mic preamps</td>
+<td>Standard on-set recording, final broadcast delivery</td>
+</tr>
+<tr>
+<td><strong>32-bit Float</strong></td>
+<td>&gt;1500 dB</td>
+<td>Infinite headroom; captures below noise floor and above 0 dBFS</td>
+<td>Unpredictable live production, run-and-gun dialog</td>
+</tr>
+</tbody>
+</table>
+<p>A 24-bit workflow allows audio engineers to track dialog with
+conservative gain (-18 to -24 dBFS peaks) to protect against sudden
+clipping while retaining a clean signal well above the digital noise
+floor.</p>
+<h2 id="32-bit-float-vs-24-bit-fixed-on-set">32-Bit Float vs 24-Bit
+Fixed on Set</h2>
+<p>Modern field recorders frequently employ 32-bit floating-point
+architecture paired with dual analog-to-digital converters (ADCs).
+Unlike fixed-point systems where signals crossing 0 dBFS undergo
+irreversible square-wave clipping, 32-bit float uses an exponent scale
+that tracks amplitudes far above 0 dBFS. Clipped peaks from unexpected
+shouts or explosions can be brought down in the digital audio
+workstation (DAW) with zero harmonic distortion, eliminating the need
+for aggressive analog limiters during capture.</p>
+<h2 id="best-practices-for-post-production-pipelines">Best Practices for
+Post-Production Pipelines</h2>
+<p>Maintaining high audio fidelity requires minimizing unnecessary
+sample rate conversions (SRC) and dithering stages throughout editing
+and mastering:</p>
+<ol type="1">
+<li><strong>Maintain Unified Session Rates:</strong> Set all DAW
+sessions, NLE timelines, and external audio mixers to 48 kHz or 96 kHz
+from project launch to prevent lossy real-time conversions on the edit
+timeline.</li>
+<li><strong>Process Internally at High Precision:</strong> Ensure the
+digital audio workstation processes audio internally at 32-bit float or
+64-bit float to prevent rounding errors across chained plugins.</li>
+<li><strong>Apply Dither on Final Export:</strong> When exporting 24-bit
+master audio down to a 16-bit format, apply triangular or noise-shaped
+dither to mask truncation distortion with low-level, benign noise.</li>
+</ol></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

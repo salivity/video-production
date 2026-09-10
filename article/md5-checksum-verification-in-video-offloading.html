@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD5 Checksum Verification in Video Offloading - video-production</title>
+    <meta name="description" content="On a video production set, MD5 checksum verification is an automated quality-control process used during data offloading to ensure that footage copied from camera media to backup drives is bit-for-bit identical to the original. By generating a unique cry">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/md5-checksum-verification-in-video-offloading">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MD5 Checksum Verification in Video Offloading - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/md5-checksum-verification-in-video-offloading" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="On a video production set, MD5 checksum verification is an automated quality-control process used during data offloading to ensure that footage copied from camera media to backup drives is bit-for-bit identical to the original. By generating a unique cry" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="md5-checksum-verification-in-video-offloading">MD5 Checksum
+Verification in Video Offloading</h1>
+<p>On a video production set, MD5 checksum verification is an automated
+quality-control process used during data offloading to ensure that
+footage copied from camera media to backup drives is bit-for-bit
+identical to the original. By generating a unique cryptographic
+fingerprint for both the source and the copied files, this process
+detects file corruption, missing frames, and transfer errors before
+camera cards are wiped and reused.</p>
+<p>An MD5 (Message Digest 5) checksum is a mathematical algorithm that
+scans a file and produces a unique 32-character hexadecimal string
+representing its exact contents. If even a single bit within a
+multi-gigabyte video file changes during the transfer process—due to a
+faulty cable, a failing drive, or an interrupted connection—the
+resulting checksum will be entirely different, immediately flagging the
+copy as compromised.</p>
+<p>During a standard Digital Imaging Technician (DIT) or data wrangler
+workflow, offloading software like ShotPut Pro, Silverstack, or DaVinci
+Resolve manages this process in three distinct phases:</p>
+<ol type="1">
+<li><strong>Source Generation:</strong> The software reads the original
+video file directly from the camera card and calculates its unique MD5
+hash.</li>
+<li><strong>Data Transfer:</strong> The file is copied to one or more
+target destinations, such as primary RAID arrays and shuttle
+drives.</li>
+<li><strong>Target Verification:</strong> The software reads back the
+newly copied file from the destination drive, calculates its MD5 hash
+independently, and compares it to the original hash.</li>
+</ol>
+<p>If the hash values match perfectly, the transfer is confirmed as
+mathematically identical. If the values do not match, the software
+alerts the operator, preventing incomplete or corrupted footage from
+entering the post-production pipeline.</p>
+<p>The primary function of this verification is risk mitigation. Without
+checksum verification, a standard operating system "drag-and-drop"
+transfer only confirms that the file size matches, which does not
+protect against silent corruption, dropped metadata, or read/write
+errors. Verified offloads allow productions to generate Media Hash Lists
+(MHL) as formal audit trails, giving producers and camera assistants the
+technical certainty required to safely format original camera media and
+continue shooting.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

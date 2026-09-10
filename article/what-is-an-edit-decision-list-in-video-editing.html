@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is an Edit Decision List in Video Editing? - video-production</title>
+    <meta name="description" content="An Edit Decision List (EDL) is a structured, plain-text metadata document that records every edit decision made during the video post-production process. Historically, it served as the critical bridge between offline rough-cut editing and final online ma">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/what-is-an-edit-decision-list-in-video-editing">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="What Is an Edit Decision List in Video Editing? - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/what-is-an-edit-decision-list-in-video-editing" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="An Edit Decision List (EDL) is a structured, plain-text metadata document that records every edit decision made during the video post-production process. Historically, it served as the critical bridge between offline rough-cut editing and final online ma" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="what-is-an-edit-decision-list-in-video-editing">What Is an Edit
+Decision List in Video Editing?</h1>
+<p>An Edit Decision List (EDL) is a structured, plain-text metadata
+document that records every edit decision made during the video
+post-production process. Historically, it served as the critical bridge
+between offline rough-cut editing and final online mastering, allowing
+editors to craft stories using inexpensive, low-resolution media before
+automatically assembling the final cut from expensive master tapes.</p>
+<h2 id="understanding-the-edit-decision-list">Understanding the Edit
+Decision List</h2>
+<p>At its core, an EDL is an ordered recipe for reconstructing a
+timeline. Rather than containing any actual video or audio media, an EDL
+consists entirely of alphanumeric data that describes source reels,
+track channels, transition types, and precise starting and ending
+timecodes.</p>
+<p>Each line in a standard EDL represents an individual event or cut,
+detailing:</p>
+<ul>
+<li><strong>Event Number:</strong> The sequential order of the shot
+within the program timeline.</li>
+<li><strong>Reel or Tape ID:</strong> The identifier of the physical
+source tape or original media roll.</li>
+<li><strong>Track Channels:</strong> Indicators for whether the cut
+affects video, audio channels, or both.</li>
+<li><strong>Transition Type:</strong> Cut, dissolve, wipe, or key, along
+with transition duration in frames.</li>
+<li><strong>Source Timecode (In and Out):</strong> The exact starting
+and ending timecode on the original raw footage tape.</li>
+<li><strong>Master Timeline Timecode (In and Out):</strong> The exact
+starting and ending timecode where the clip must sit on the final
+program master.</li>
+</ul>
+<h2 id="the-historical-offline-to-online-workflow">The Historical
+Offline-to-Online Workflow</h2>
+<p>Before high-capacity hard drives and digital storage could handle
+uncompressed broadcast-quality video, post-production relied on a split
+workflow: offline editing and online conforming.</p>
+<h3 id="1-the-offline-editing-stage">1. The Offline Editing Stage</h3>
+<p>In the offline stage, assistants created inexpensive, lower-quality
+tape dubs (such as U-matic or VHS) or digitized low-resolution proxy
+files into early computerized systems like CMX or early Avid Media
+Composer suites. Creative editors focused on pacing, storytelling, and
+structure without occupying expensive high-end broadcast suites. Once
+the director and producer approved the cut, the editing system exported
+the project data as an EDL file.</p>
+<h3 id="2-the-online-conforming-stage">2. The Online Conforming
+Stage</h3>
+<p>The production team transported the EDL on a floppy disk—along with
+the original high-grade camera tapes (such as 1-inch Type C, Betacam SP,
+or Digital Betacam)—to an online mastering suite.</p>
+<p>In the online suite:</p>
+<ol type="1">
+<li>A computer-controlled system read the EDL line by line.</li>
+<li>The system instructed motorized tape decks to automatically
+fast-forward, rewind, cue, and capture the specified frame-accurate
+segments.</li>
+<li>The video switcher executed dissolves and cuts according to the
+EDL's precise instructions.</li>
+<li>The final, pristine master tape was recorded in a fraction of the
+time it would take to edit manually from scratch.</li>
+</ol>
+<h2 id="industry-standards-and-the-cmx-3600">Industry Standards and the
+CMX 3600</h2>
+<p>As digital editing emerged, standardization became necessary so that
+different hardware and software systems could communicate reliably. The
+CMX 3600 format, developed by CMX Systems, became the universal
+standard. Its strict column-based ASCII text structure ensured
+compatibility across diverse edit controllers, video switchers, and tape
+decks across global broadcast networks and film facilities.</p>
+<h2 id="evolution-and-modern-relevance">Evolution and Modern
+Relevance</h2>
+<p>While modern non-linear editing platforms handle complex,
+multi-layered digital video natively, the principles established by the
+Edit Decision List remain foundational to post-production. Modern
+production pipelines have largely replaced standard EDLs with richer
+metadata interchange formats such as XML and AAF, which support complex
+transitions, nested tracks, speed ramps, and effects parameters.
+Nevertheless, standard CMX 3600 EDLs are still used today for
+straightforward conform passes, audio post-production handoffs, and
+archival turnovers.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

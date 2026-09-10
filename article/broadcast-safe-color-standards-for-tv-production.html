@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broadcast Safe Color Standards for TV Production - video-production</title>
+    <meta name="description" content="Broadcast safe color standards are strict technical parameters that govern the luminance and chrominance levels of video content destined for television networks. Failing to adhere to these specifications can result in visual artifacts, audio buzz on leg">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/broadcast-safe-color-standards-for-tv-production">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Broadcast Safe Color Standards for TV Production - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/broadcast-safe-color-standards-for-tv-production" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Broadcast safe color standards are strict technical parameters that govern the luminance and chrominance levels of video content destined for television networks. Failing to adhere to these specifications can result in visual artifacts, audio buzz on leg" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="broadcast-safe-color-standards-for-tv-production">Broadcast Safe
+Color Standards for TV Production</h1>
+<p>Broadcast safe color standards are strict technical parameters that
+govern the luminance and chrominance levels of video content destined
+for television networks. Failing to adhere to these specifications can
+result in visual artifacts, audio buzz on legacy systems, equipment
+damage, or immediate rejection by network quality control (QC)
+departments. This guide outlines the essential color standards, signal
+ranges, measurement units, and monitoring tools required to ensure your
+video deliverable is fully broadcast legal.</p>
+<h3 id="the-standard-gamuts-rec-709-and-rec-2020">The Standard Gamuts:
+Rec. 709 and Rec. 2020</h3>
+<p>Television networks operate within standardized color spaces defined
+by the International Telecommunication Union (ITU):</p>
+<ul>
+<li><strong>ITU-R BT.709 (Rec. 709):</strong> The universal standard for
+Standard Dynamic Range (SDR) High Definition (HD) television. Content
+intended for standard broadcast must strictly conform to the Rec. 709
+color primaries and gamma curve.</li>
+<li><strong>ITU-R BT.2020 (Rec. 2020):</strong> Used for Ultra High
+Definition (UHD/4K) and High Dynamic Range (HDR) workflows. While Rec.
+2020 covers a much broader spectrum than Rec. 709, networks broadcasting
+in HDR usually mandate content delivered within Rec. 2020 container
+limits, often constrained to the DCI-P3 gamut within that space.</li>
+</ul>
+<h3 id="legal-range-vs-full-range-studio-swing">Legal Range vs. Full
+Range (Studio Swing)</h3>
+<p>Computer monitors display "Full Range" (0–255 in 8-bit), but
+television broadcast infrastructure operates on "Legal Range" (also
+known as Limited Range or Studio Swing).</p>
+<ul>
+<li><strong>8-bit Systems:</strong> Luminance (Y) is mapped from 16
+(black point) to 235 (white point). Chrominance (Cb/Cr) channels span
+from 16 to 240, with 128 as the neutral center. Values from 0–15 and
+236–255 are reserved as "footroom" and "headroom" to prevent signal
+clipping during digital-to-analog conversion.</li>
+<li><strong>10-bit Systems:</strong> The professional broadcast standard
+for mastering. Luminance extends from 64 (black) to 940 (white).
+Chrominance ranges from 64 to 960, with 512 representing neutral
+chrominance.</li>
+</ul>
+<h3 id="ire-limits-and-signal-tolerances">IRE Limits and Signal
+Tolerances</h3>
+<p>Luminance and signal voltage are measured using the Institute of
+Radio Engineers (IRE) scale:</p>
+<ul>
+<li><strong>Pure Black:</strong> 0 IRE (equivalent to 10-bit code 64).
+Legacy NTSC regions historically used a 7.5 IRE black setup, but modern
+digital digital HD/UHD workflows universally standardize at 0 IRE for
+true black.</li>
+<li><strong>Pure White:</strong> 100 IRE (equivalent to 10-bit code
+940).</li>
+<li><strong>Allowed Overshoot:</strong> International standards such as
+<strong>EBU R103</strong> allow a tiny tolerance margin—typically -1% to
+103% (or -7 mV to 735 mV in analog terms)—for transient video spikes
+caused by compression, filtering, or scaling. Any sustained signal
+outside of 0–100 IRE will cause a QC rejection.</li>
+</ul>
+<h3 id="gamut-limits-rgb-and-composite">Gamut Limits (RGB and
+Composite)</h3>
+<p>Networks check color safety through two distinct methods:</p>
+<ol type="1">
+<li><strong>RGB Gamut Limits:</strong> Evaluates the individual Red,
+Green, and Blue channels. Even if the overall luminance is safe, an
+oversaturated single color channel can exceed the 0–100% boundary. All
+three color channels must stay within the legal 0–100% (or 0–700 mV)
+window.</li>
+<li><strong>Composite Gamut Limits:</strong> Evaluates how the digital
+signal translates when encoded into an analog PAL or NTSC composite
+signal. Deeply saturated colors that are technically legal in component
+RGB can cause severe overmodulation when combined into a composite
+waveform. Limits are typically restricted to -20 to +120 IRE on a
+composite preview scale.</li>
+</ol>
+<h3 id="essential-scopes-for-verification">Essential Scopes for
+Verification</h3>
+<p>To verify that your master complies with network requirements:</p>
+<ul>
+<li><strong>Waveform Monitor:</strong> Used to evaluate luminance. Set
+the waveform to display standard IRE or millivolts to ensure blacks
+never drop below 0 IRE/64 and peaks never exceed 100 IRE/940.</li>
+<li><strong>RGB Parade:</strong> Isolates the Red, Green, and Blue
+channels side-by-side to catch individual color channel clipping that an
+overall waveform monitor might obscure.</li>
+<li><strong>Vectorscope:</strong> Measures hue and saturation.
+Vectorscopes include target boxes corresponding to 75% or 100% color
+bars. Most network specifications mandate that saturation levels must
+never stretch beyond the 75% targets.</li>
+</ul>
+<h3 id="broadcast-legalizers">Broadcast Legalizers</h3>
+<p>Most non-linear editing systems and color grading suites (such as
+DaVinci Resolve, Adobe Premiere, and Avid Media Composer) provide a
+built-in "Broadcast Safe" or "Color Limiter" effect. These plugins clamp
+luminance and chrominance at specified network thresholds (e.g., EBU
+R103 or SMPTE RP165). While useful as a safety net placed at the end of
+the mastering chain, limiters can create unnatural color flattening if
+relied upon to fix grossly non-compliant footage; manual correction
+using scopes remains the industry standard.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

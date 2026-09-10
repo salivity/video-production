@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Should You Shoot RAW or ProRes in Commercial Video? - video-production</title>
+    <meta name="description" content="Choosing between RAW recording formats and Apple ProRes codecs is a critical technical decision in commercial video production that directly impacts image fidelity, data management, and turnaround speed. RAW captures uncompressed or minimally compressed">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/should-you-shoot-raw-or-prores-in-commercial-video">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Should You Shoot RAW or ProRes in Commercial Video? - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/should-you-shoot-raw-or-prores-in-commercial-video" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Choosing between RAW recording formats and Apple ProRes codecs is a critical technical decision in commercial video production that directly impacts image fidelity, data management, and turnaround speed. RAW captures uncompressed or minimally compressed" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="should-you-shoot-raw-or-prores-in-commercial-video">Should You
+Shoot RAW or ProRes in Commercial Video?</h1>
+<p>Choosing between RAW recording formats and Apple ProRes codecs is a
+critical technical decision in commercial video production that directly
+impacts image fidelity, data management, and turnaround speed. RAW
+captures uncompressed or minimally compressed sensor data, deferring
+demosaicing, white balance, and ISO adjustments to post-production for
+maximum grading flexibility. In contrast, ProRes processes that data
+in-camera into a robust, high-bitrate intra-frame codec optimized for
+real-time editing performance and rapid delivery. Selecting the right
+format requires balancing color grading needs against project deadlines,
+storage infrastructure, and client specifications.</p>
+<h2 id="sensor-processing-and-pipeline-architecture">Sensor Processing
+and Pipeline Architecture</h2>
+<p>The fundamental difference between RAW and ProRes lies in where
+sensor debayering (demosaicing) occurs.</p>
+<p>When shooting RAW—such as REDCODE RAW, Blackmagic RAW, Canon Cinema
+RAW Light, or ARRI RAW—the camera sensor records raw luminance readings
+directly from the Bayer filter array. Color interpolation, white balance
+settings, and ISO gain are not permanently baked into the pixel data;
+instead, they are written as non-destructive metadata. This allows the
+colorist or post-production artist to adjust exposure, highlight
+roll-off, and color temperature during post-processing using the camera
+sensor's complete dynamic range and raw signal.</p>
+<p>ProRes functions as a finished digital intermediate format. The
+camera’s image processor takes the raw sensor data, performs debayering,
+applies the chosen ISO and color space (such as a Log gamma curve like
+LogC, S-Log3, or C-Log), and compresses the resulting RGB image using
+Apple’s intra-frame compression algorithm. Because each frame is
+compressed independently without temporal prediction between frames,
+ProRes maintains high visual fidelity while eliminating the
+computational overhead of software debayering in your non-linear editor
+(NLE).</p>
+<h2 id="post-production-flexibility-and-color-grading">Post-Production
+Flexibility and Color Grading</h2>
+<p>Commercial post-production workflows demand precise visual control,
+but the level of malleability required depends on the complexity of the
+shoot.</p>
+<h3 id="raw-flexibility">RAW Flexibility</h3>
+<p>RAW video provides unmatched recovery potential for high-contrast
+lighting scenarios and complex visual effects (VFX):</p>
+<ul>
+<li><strong>White Balance and Tint Adjustments:</strong> Color
+temperature and green/magenta tint can be altered natively without
+introducing chromatic artifacts or color cast distortion.</li>
+<li><strong>Highlight and Shadow Recovery:</strong> The full bit depth
+(typically 12-bit to 16-bit) remains intact, providing granular control
+over shadow lift and highlight roll-off without banding.</li>
+<li><strong>ISO and Dynamic Range Remapping:</strong> Exposure
+compensation can be applied at the debayer stage, often yielding cleaner
+noise profiles when pushing or pulling levels.</li>
+<li><strong>Color Space Remapping:</strong> Sensor data can be mapped
+directly into wide color gamuts like ACES or DaVinci Wide Gamut without
+intermediate color conversions.</li>
+</ul>
+<h3 id="prores-capabilities">ProRes Capabilities</h3>
+<p>ProRes variants (such as ProRes 422 HQ, ProRes 4444, and ProRes 4444
+XQ) deliver exceptional color performance for the majority of broadcast
+and digital commercial applications:</p>
+<ul>
+<li><strong>ProRes 422 HQ:</strong> 10-bit color depth with 4:2:2 chroma
+subsampling, supporting data rates around 220 Mbps at 4K 24p. It
+provides ample latitude for Log-to-Rec.709 conversions and moderate
+stylized grading.</li>
+<li><strong>ProRes 4444 and 4444 XQ:</strong> 12-bit color depth with
+uncompressed 4:4:4 chroma subsampling, providing identical bit depth to
+most compressed RAW formats. These flavors eliminate color channel
+compression artifacts, making them ideal for green screen chroma keying
+and graphics compositing.</li>
+</ul>
+<h2 id="data-rates-storage-and-hardware-overhead">Data Rates, Storage,
+and Hardware Overhead</h2>
+<p>Commercial production schedules often operate on strict timelines
+where ingest and render speeds govern profitability.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>RAW Formats</th>
+<th>Apple ProRes (422 HQ / 4444)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Debayering</strong></td>
+<td>Performed in NLE / GPU</td>
+<td>Processed in-camera</td>
+</tr>
+<tr>
+<td><strong>Bit Depth</strong></td>
+<td>12-bit to 16-bit</td>
+<td>10-bit (422 HQ) / 12-bit (4444)</td>
+</tr>
+<tr>
+<td><strong>Chroma Subsampling</strong></td>
+<td>Full sensor Bayer array</td>
+<td>4:2:2 or 4:4:4</td>
+</tr>
+<tr>
+<td><strong>Storage Consumption</strong></td>
+<td>High to extreme (depending on compression ratio)</td>
+<td>Moderate to high</td>
+</tr>
+<tr>
+<td><strong>NLE Timeline Performance</strong></td>
+<td>GPU/CPU intensive (requires proxy workflows)</td>
+<td>Highly optimized for real-time playback</td>
+</tr>
+<tr>
+<td><strong>Archival Cost</strong></td>
+<td>High long-term storage requirements</td>
+<td>Predictable and manageable footprint</td>
+</tr>
+</tbody>
+</table>
+<p>ProRes files can be edited natively on modern workstations without
+generating intermediate proxy files, significantly reducing offload
+times, review link exports, and client review cycles. Conversely,
+uncompressed or low-compression RAW files require high-bandwidth NVMe
+storage arrays, high-end GPU configurations, and dedicated proxy
+generation pipelines to maintain smooth timeline playback.</p>
+<h2 id="selecting-the-right-codec-for-commercial-projects">Selecting the
+Right Codec for Commercial Projects</h2>
+<p>The decision to deploy RAW or ProRes should align directly with
+project deliverables and environmental constraints.</p>
+<h3 id="when-to-choose-raw">When to Choose RAW</h3>
+<ul>
+<li>High-end broadcast commercials featuring complex set extensions, CGI
+integration, or green screen elements where 12-bit or 16-bit
+uncompressed Bayer data ensures seamless compositing.</li>
+<li>Uncontrolled or dynamic lighting environments (such as outdoor
+shoots with variable cloud cover or high-contrast sunlit locations)
+where maximum highlight recovery is mandatory.</li>
+<li>Feature-level commercial campaigns targeting HDR master deliverables
+(Dolby Vision, HDR10) that benefit from sensor-native dynamic
+range.</li>
+</ul>
+<h3 id="when-to-choose-prores">When to Choose ProRes</h3>
+<ul>
+<li>Fast-turnaround commercial deliverables, episodic commercial
+content, corporate brand films, and social media campaigns with tight
+post-production windows.</li>
+<li>Multi-camera studio configurations with controlled, metered lighting
+where exposure and white balance are dialed in accurately on set.</li>
+<li>Workflows where client review cuts or direct-to-editor pipelines
+must begin immediately following the wrap of production without lengthy
+proxy renders or transcoding steps.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

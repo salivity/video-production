@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secondary Color Correction: Isolating Specific Hues - video-production</title>
+    <meta name="description" content="Secondary color correction is a targeted post-production technique in commercial video editing that isolates specific color ranges to adjust them independently from the rest of the image. While primary correction balances the overall shot, secondary grad">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/secondary-color-correction-isolating-specific-hues">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Secondary Color Correction: Isolating Specific Hues - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/secondary-color-correction-isolating-specific-hues" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Secondary color correction is a targeted post-production technique in commercial video editing that isolates specific color ranges to adjust them independently from the rest of the image. While primary correction balances the overall shot, secondary grad" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="secondary-color-correction-isolating-specific-hues">Secondary
+Color Correction: Isolating Specific Hues</h1>
+<p>Secondary color correction is a targeted post-production technique in
+commercial video editing that isolates specific color ranges to adjust
+them independently from the rest of the image. While primary correction
+balances the overall shot, secondary grading allows colorists to
+manipulate exact colors—such as product packaging, corporate branding,
+or skin tones—without shifting the background or ambient lighting. This
+article outlines how colorists use keying tools, qualifiers, and masks
+to isolate and manipulate specific hues to achieve commercial-grade
+visual consistency.</p>
+<h3 id="primary-vs-secondary-color-correction">Primary vs. Secondary
+Color Correction</h3>
+<p>Primary color correction sets the baseline for an entire clip. It
+adjusts overall exposure, contrast, white balance, and tonal range
+across the entire frame. Once a balanced, uniform look is established
+across scenes, secondary color correction is applied. Secondary
+correction focuses exclusively on specific elements within that balanced
+frame, giving the colorist selective control over individual color
+channels and objects.</p>
+<h3 id="tools-used-to-isolate-specific-hues">Tools Used to Isolate
+Specific Hues</h3>
+<p>Isolating a hue requires generating a precise selection, often called
+a matte or a mask, around the targeted pixels. Colorists rely on several
+key tools within grading software:</p>
+<ul>
+<li><strong>HSL Qualifiers:</strong> The most common isolation method
+uses Hue, Saturation, and Luminance (HSL) qualifiers. The colorist uses
+an eyedropper tool to sample a color. The software then detects pixels
+falling within that specific hue angle, saturation depth, and brightness
+level.</li>
+<li><strong>Hue vs. Hue / Hue vs. Sat Curves:</strong> Curve tools allow
+for quick, direct manipulation without complex keying. By clicking a
+point on a color wheel or curve, an editor can shift a single hue toward
+another color or decrease its saturation directly.</li>
+<li><strong>3D and Magic Qualifiers:</strong> Modern grading suites use
+volumetric 3D color space algorithms and neural engine tools to separate
+complex, unevenly lit colors that traditional HSL pickers might
+miss.</li>
+</ul>
+<h3 id="refining-the-selection-with-spatial-masks">Refining the
+Selection with Spatial Masks</h3>
+<p>Color qualifiers select every pixel in the frame matching the chosen
+criteria. If an actor's lips share the same red hue as a prop in the
+background, adjustments made to the red qualifier will affect both.</p>
+<p>To prevent unwanted changes, colorists combine qualifiers with
+spatial shapes, often referred to as "power windows" or vector masks. By
+drawing a shape around the subject and tracking its movement across the
+shot, the color adjustment is confined only to the target area,
+eliminating spillover into similar-colored background elements.</p>
+<h3 id="cleaning-the-matte">Cleaning the Matte</h3>
+<p>Raw selections frequently contain digital noise, harsh edges, or
+artifacts caused by camera compression and motion blur. To make the
+adjustment appear natural, colorists refine the matte using specific
+edge-control controls:</p>
+<ul>
+<li><strong>Denoise and Clean Black/White:</strong> Removes stray pixels
+inside or outside the target selection.</li>
+<li><strong>Feathering and Blur Radius:</strong> Softens the borders of
+the matte so the modified color blends seamlessly into adjacent pixels
+without visible seams or fringing.</li>
+<li><strong>In/Out Shrink:</strong> Expands or contracts the matte
+boundaries to ensure complete coverage of the subject's edges.</li>
+</ul>
+<h3
+id="commercial-applications-of-isolated-color-adjustments">Commercial
+Applications of Isolated Color Adjustments</h3>
+<p>Once an isolated selection is refined, colorists alter the hue,
+saturation, and luminance of that specific zone. In commercial
+production, this process serves several practical functions:</p>
+<ul>
+<li><strong>Brand and Product Fidelity:</strong> Advertisers require
+exact color accuracy for logos, merchandise, and packaging. Secondary
+correction ensures that a company’s signature color matches strict brand
+guidelines, even if the scene’s practical lighting slightly distorted
+the color on set.</li>
+<li><strong>Skin Tone Separation:</strong> Commercial grading often
+demands stylized environments, such as cool, moody backgrounds.
+Secondary correction isolates human skin tones, keeping them warm and
+natural while the surrounding scene is pushed into stylized color
+palettes.</li>
+<li><strong>Guiding Viewer Attention:</strong> The human eye is drawn to
+high saturation and warm hues. By slightly desaturating competing
+background elements and boosting the vibrance of the featured product,
+colorists use secondary grading to naturally direct viewer focus.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

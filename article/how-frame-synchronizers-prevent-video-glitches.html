@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Frame Synchronizers Prevent Video Glitches - video-production</title>
+    <meta name="description" content="Switching between unsynchronized video sources in live production often leads to image tearing, vertical rolling, or brief black screens. Video switchers equipped with built-in frame synchronizers eliminate these visual artifacts by capturing incoming vi">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/how-frame-synchronizers-prevent-video-glitches">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Frame Synchronizers Prevent Video Glitches - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/how-frame-synchronizers-prevent-video-glitches" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Switching between unsynchronized video sources in live production often leads to image tearing, vertical rolling, or brief black screens. Video switchers equipped with built-in frame synchronizers eliminate these visual artifacts by capturing incoming vi" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-frame-synchronizers-prevent-video-glitches">How Frame
+Synchronizers Prevent Video Glitches</h1>
+<p>Switching between unsynchronized video sources in live production
+often leads to image tearing, vertical rolling, or brief black screens.
+Video switchers equipped with built-in frame synchronizers eliminate
+these visual artifacts by capturing incoming video signals into a
+temporary digital buffer and reading them out in perfect lockstep with
+the switcher’s internal master clock. This article explains the
+mechanics of frame synchronization, how it handles mismatched timing,
+and why it ensures seamless cuts without external genlock hardware.</p>
+<h3 id="the-problem-with-unsynced-sources">The Problem with Unsynced
+Sources</h3>
+<p>Every video source outputs frames at a specific frequency and phase
+dictated by its internal crystal oscillator. Even if two cameras are
+configured to output 1080p at 59.94 frames per second, their internal
+clocks inevitably drift. One camera might begin drawing a new frame
+several milliseconds ahead of or behind the other.</p>
+<p>When a traditional switcher cuts between two out-of-phase sources,
+the display receives a cut mid-frame or misses the vertical blanking
+interval (VBI)—the brief pause between the end of one frame and the
+start of the next. This timing discrepancy forces the receiving monitor
+or downstream encoder to lose lock, manifesting visually as:</p>
+<ul>
+<li><strong>Vertical roll:</strong> The picture shifts vertically as the
+display attempts to re-identify the frame boundary.</li>
+<li><strong>Image tearing:</strong> The top of the screen displays the
+previous source while the bottom displays the new source.</li>
+<li><strong>Black frames or flashes:</strong> The switcher or display
+momentarily drops the signal while re-establishing digital
+handshakes.</li>
+</ul>
+<h3 id="how-built-in-frame-synchronizers-work">How Built-in Frame
+Synchronizers Work</h3>
+<p>A built-in frame synchronizer acts as a digital timing bridge between
+wild (unsynchronized) inputs and the switcher’s internal processing bus.
+It achieves synchronization through a multi-step digital buffering
+process:</p>
+<h4 id="1-input-buffering-ram-storage">1. Input Buffering (RAM
+Storage)</h4>
+<p>Each input channel equipped with a frame synchronizer contains
+dedicated memory, typically capable of holding one to two full frames of
+uncompressed digital video. As the incoming video signal arrives, it is
+continuously written into this internal buffer line by line, regardless
+of when it arrives.</p>
+<h4 id="2-master-clock-reference">2. Master Clock Reference</h4>
+<p>The switcher operates on a single, high-precision internal master
+timebase (often functioning as an internal genlock reference). Every
+internal processing channel, mix-effects (M/E) bus, and auxiliary output
+adheres strictly to this master clock.</p>
+<h4 id="3-phased-readout">3. Phased Readout</h4>
+<p>Instead of routing the input video directly to the program bus, the
+switcher reads the video data out of the buffer memory. The readout is
+timed precisely to the switcher's master clock. Even if an input source
+delivers its frame milliseconds out of phase, the synchronizer holds the
+data until the switcher’s master clock signals the exact moment to
+release the frame. As a result, every video source reaches the
+cross-point matrix aligned to the same nanosecond.</p>
+<h4 id="4-handling-clock-drift-drop-and-repeat">4. Handling Clock Drift
+(Drop and Repeat)</h4>
+<p>Because the unsynchronized source and the switcher run on separate
+clocks, the input will eventually drift ahead or fall behind the master
+clock:</p>
+<ul>
+<li><strong>If the source is faster than the switcher:</strong> The
+buffer fills up faster than it can be read. To prevent an overflow or
+visual hitch, the synchronizer silently drops one full frame during the
+vertical interval.</li>
+<li><strong>If the source is slower than the switcher:</strong> The
+buffer empties before the next frame arrives. To prevent a blank screen,
+the synchronizer duplicates the previous frame.</li>
+</ul>
+<p>Because entire frames are dropped or repeated rather than fractional
+frames, the synchronization occurs seamlessly without interrupting the
+vertical sync signal sent to downstream displays.</p>
+<h3 id="the-impact-on-modern-live-production">The Impact on Modern Live
+Production</h3>
+<p>Built-in frame synchronizers eliminate the historic requirement to
+run separate black burst or tri-level sync (genlock) cables to every
+device on a set. This technology allows production switchers to
+seamlessly accept non-broadcast devices that lack genlock
+capabilities—such as laptops via HDMI, consumer mirrorless cameras,
+gaming consoles, and remote video feeds—and cut between them instantly
+with zero visual disruption.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

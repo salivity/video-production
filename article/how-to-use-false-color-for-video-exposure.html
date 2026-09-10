@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use False Color for Video Exposure - video-production</title>
+    <meta name="description" content="False color is an essential exposure monitoring tool that translates the brightness values of an image into a distinct spectrum of colors. This article explains the fundamentals of false color, breaks down how it reads luminance via IRE scales, and demon">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/how-to-use-false-color-for-video-exposure">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use False Color for Video Exposure - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/how-to-use-false-color-for-video-exposure" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="False color is an essential exposure monitoring tool that translates the brightness values of an image into a distinct spectrum of colors. This article explains the fundamentals of false color, breaks down how it reads luminance via IRE scales, and demon" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-use-false-color-for-video-exposure">How to Use False
+Color for Video Exposure</h1>
+<p>False color is an essential exposure monitoring tool that translates
+the brightness values of an image into a distinct spectrum of colors.
+This article explains the fundamentals of false color, breaks down how
+it reads luminance via IRE scales, and demonstrates how cinematographers
+rely on it on set to achieve consistent skin tones, protect highlight
+and shadow details, and ensure precise exposure across varied lighting
+environments.</p>
+<h2 id="what-is-false-color">What Is False Color?</h2>
+<p>False color is an exposure assist tool built into professional cinema
+cameras and production monitors. Instead of showing the true colors of a
+scene, it replaces visual information with an artificial color overlay
+representing luminance values.</p>
+<p>The tool measures brightness using IRE (Institute of Radio Engineers)
+units, ranging from 0 (absolute black) to 100 (pure white), and
+sometimes beyond 100 to indicate digital sensor clipping. Each specific
+IRE range corresponds to a predetermined color, turning the monitor into
+an intuitive, real-time exposure heat map.</p>
+<h2 id="the-standard-false-color-spectrum">The Standard False Color
+Spectrum</h2>
+<p>While manufacturers such as ARRI, RED, and SmallHD have minor
+variations in their color mapping, most follow an industry-standard
+hierarchy:</p>
+<ul>
+<li><strong>Purple / Dark Blue (0–10 IRE):</strong> Deep shadows,
+underexposure, and clipped blacks with no recoverable data.</li>
+<li><strong>Light Blue (10–25 IRE):</strong> Shadow details just above
+pure black.</li>
+<li><strong>Green (38–45 IRE):</strong> 18% neutral gray, which serves
+as the benchmark for standard middle-gray exposure in digital
+sensors.</li>
+<li><strong>Pink / Light Green (45–70 IRE):</strong> Typical optimal
+ranges for human skin tones. Pink generally represents lighter
+complexions (~55–60 IRE), while darker complexions often fall in the
+light green or mid-tone bands (~40–50 IRE).</li>
+<li><strong>Yellow / Orange (80–99 IRE):</strong> Bright highlights,
+such as bright skies, hot practical lights, or reflective surfaces
+approaching the sensor's limit.</li>
+<li><strong>Red (100+ IRE):</strong> Blown-out highlights, total sensor
+saturation, and unrecoverable clipped data.</li>
+</ul>
+<h2 id="how-cinematographers-use-false-color">How Cinematographers Use
+False Color</h2>
+<h3 id="1-nailing-consistent-skin-tones">1. Nailing Consistent Skin
+Tones</h3>
+<p>Human skin is often the most critical exposure element in a scene.
+Visual estimation through a monitor can be deceptive, particularly when
+viewing flat Log profiles or working outdoors under changing ambient
+light. Cinematographers use false color to verify that an actor's face
+consistently hits the targeted IRE color value across wide shots,
+close-ups, and varying lighting setups.</p>
+<h3 id="2-protecting-dynamic-range">2. Protecting Dynamic Range</h3>
+<p>False color eliminates the guesswork around clipping.
+Cinematographers can instantly spot whether a practical light or a
+window is blowing out by looking for red patches, or verify whether
+shadow areas are dropping into crushed purple zones. This enables rapid
+adjustments to aperture, ND filters, or lighting ratios before
+rolling.</p>
+<h3 id="3-exposure-independence-from-display-luts">3. Exposure
+Independence from Display LUTs</h3>
+<p>Look-Up Tables (LUTs) applied to production monitors can alter
+perceived exposure and contrast. False color can be set to read the raw
+sensor signal directly beneath the LUT. This ensures exposure decisions
+are made based on the actual digital negative recorded to the media
+rather than the aesthetic look applied to the monitor.</p>
+<h3 id="4-shot-to-shot-lighting-matching">4. Shot-to-Shot Lighting
+Matching</h3>
+<p>When filming multi-camera setups or returning to a set for reshoots,
+false color allows camera operators and DPs to reproduce the exact
+lighting ratios of previous takes. By memorizing or documenting the
+color distribution of key elements, crews can match lighting setups
+precisely, reducing corrective color grading in post-production.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

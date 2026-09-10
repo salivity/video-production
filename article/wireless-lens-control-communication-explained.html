@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireless Lens Control Communication Explained - video-production</title>
+    <meta name="description" content="Wireless lens control systems—often called FIZ (Focus, Iris, Zoom) systems—rely on robust, low-latency radio frequency (RF) technology to translate physical inputs from an operator's hand unit into precise mechanical motion at the camera lens. On com">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/wireless-lens-control-communication-explained">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Wireless Lens Control Communication Explained - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/wireless-lens-control-communication-explained" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Wireless lens control systems—often called FIZ (Focus, Iris, Zoom) systems—rely on robust, low-latency radio frequency (RF) technology to translate physical inputs from an operator's hand unit into precise mechanical motion at the camera lens. On com" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="wireless-lens-control-communication-explained">Wireless Lens
+Control Communication Explained</h1>
+<p>Wireless lens control systems—often called FIZ (Focus, Iris, Zoom)
+systems—rely on robust, low-latency radio frequency (RF) technology to
+translate physical inputs from an operator's hand unit into precise
+mechanical motion at the camera lens. On complex video production sets
+crowded with wireless video transmitters, intercoms, and mobile devices,
+these systems maintain rock-solid connections by utilizing dedicated RF
+bands, frequency-hopping spread spectrum (FHSS) protocols, and
+ultra-lightweight data packets. This article details the underlying
+radio architecture, interference-handling strategies, and bidirectional
+communication protocols that allow wireless hand units and lens motors
+to operate in real time without lag or signal loss.</p>
+<h3 id="dedicated-radio-frequencies-and-hardware-modules">Dedicated
+Radio Frequencies and Hardware Modules</h3>
+<p>Wireless hand units and motor receivers communicate using embedded
+transceiver modules tuned to specific frequency bands. The most common
+bands include:</p>
+<ul>
+<li><strong>2.4 GHz ISM Band:</strong> Widely supported globally,
+offering high data throughput and fast responsiveness.</li>
+<li><strong>Sub-1 GHz (433 MHz / 868 MHz / 900 MHz):</strong> Favored
+for longer range and superior obstacle penetration through walls, set
+pieces, and human bodies, though region-specific regulations dictate
+usage.</li>
+<li><strong>5 GHz and Proprietary Bands:</strong> Utilized by high-end
+systems to avoid the crowded 2.4 GHz spectrum entirely.</li>
+</ul>
+<p>Leading manufacturers (such as ARRI, Preston Cinema Systems, Tilta,
+and Teradek) integrate proprietary transceivers rather than standard
+off-the-shelf consumer chips. These specialized modules are optimized
+for deterministic latency—ensuring that a command sent arrives at
+predictable, sub-millisecond intervals.</p>
+<h3 id="spread-spectrum-and-interference-mitigation">Spread Spectrum and
+Interference Mitigation</h3>
+<p>Modern film sets present extreme RF congestion due to wireless video
+feeds (like Teradek Bolt), director monitors, Wi-Fi networks, and audio
+gear. To maintain link stability, wireless lens systems employ Frequency
+Hopping Spread Spectrum (FHSS).</p>
+<p>Instead of transmitting on a single static frequency, the hand unit
+and motor synchronously hop across dozens of micro-channels within a
+band hundreds of times per second. If a specific frequency experiences
+interference, only a negligible fraction of data is interrupted before
+the system switches to a clear frequency. Some systems also feature
+automated environment scanning during pairing, allowing the devices to
+map the local RF spectrum and avoid heavily congested channels
+automatically.</p>
+<h3 id="packet-structure-and-deterministic-latency">Packet Structure and
+Deterministic Latency</h3>
+<p>Focus pullers require immediate response times to keep moving actors
+sharp on cinema-grade, shallow-depth lenses. Because of this,
+communication latency must remain below 5 milliseconds.</p>
+<p>To achieve this speed, the data packets exchanged between the hand
+unit and the motor are extremely small:</p>
+<ol type="1">
+<li><strong>Position Data:</strong> High-resolution rotational values
+(often 12-bit to 16-bit precision) indicating the exact position of the
+hand unit’s control wheel.</li>
+<li><strong>Dynamic Constraints:</strong> Instructions regarding maximum
+motor torque, acceleration, and speed limits.</li>
+<li><strong>Addressing &amp; Verification:</strong> Identification tags
+so motors only respond to their assigned control axis (Focus, Iris, or
+Zoom), accompanied by basic checksums for error detection.</li>
+</ol>
+<p>Rather than relying on resource-heavy transmission protocols like
+standard TCP/IP or Bluetooth, manufacturers use streamlined, custom
+point-to-point protocols that prioritize raw speed and constant
+transmission rates over complex packet packaging.</p>
+<h3 id="bidirectional-telemetry-and-feedback-loops">Bidirectional
+Telemetry and Feedback Loops</h3>
+<p>The connection between a hand unit and the lens motor is a
+bidirectional conversation. While the hand unit transmits position
+targets to the motor, the motor constantly relays telemetry back to the
+controller.</p>
+<p>This return path conveys:</p>
+<ul>
+<li><strong>Calibration Data:</strong> Physical end-stops of the lens
+barrel established during power-up calibration.</li>
+<li><strong>Real-time Metrics:</strong> Motor temperature, power draw,
+and real-time position verification.</li>
+<li><strong>Peripheral Data:</strong> Integration with camera-mounted
+LiDAR units, ultrasonic rangefinders, or electronic depth-of-field
+scales, displaying real-time distance measurements directly on the hand
+unit's digital display.</li>
+</ul>
+<h3 id="network-topologies-and-multi-camera-sync">Network Topologies and
+Multi-Camera Sync</h3>
+<p>In multi-axis or multi-camera setups, systems use a star network
+topology. A single master hand unit pairs with a central motor or
+dedicated receiver box (MDR), which coordinates individual slave motors
+for focus, iris, and zoom through daisy-chained cables or internal
+wireless sub-channels. When multiple camera packages (A, B, and C
+cameras) shoot simultaneously, unique pairing IDs and separated
+operating channels ensure that commands from one focus puller never
+interfere with another camera's rig.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Organize Video Editing Bins and Sequences? - video-production</title>
+    <meta name="description" content="Professional video editing workflows depend on standardized file systems, structured bin hierarchies, and disciplined sequence versioning to ensure efficiency and smooth team collaboration. This guide details industry-standard practices for organizing pr">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/how-to-organize-video-editing-bins-and-sequences">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Organize Video Editing Bins and Sequences? - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/how-to-organize-video-editing-bins-and-sequences" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Professional video editing workflows depend on standardized file systems, structured bin hierarchies, and disciplined sequence versioning to ensure efficiency and smooth team collaboration. This guide details industry-standard practices for organizing pr" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-organize-video-editing-bins-and-sequences">How to
+Organize Video Editing Bins and Sequences?</h1>
+<p>Professional video editing workflows depend on standardized file
+systems, structured bin hierarchies, and disciplined sequence versioning
+to ensure efficiency and smooth team collaboration. This guide details
+industry-standard practices for organizing project assets from
+hard-drive ingestion to the editing timeline, covering directory
+structures, numbered NLE bins, timeline track routing, and asset version
+control.</p>
+<h2 id="establish-a-mirrored-directory-structure">Establish a Mirrored
+Directory Structure</h2>
+<p>Organization begins at the operating system level before launching
+any non-linear editing (NLE) software. Maintaining an identical folder
+hierarchy on your storage drive and inside your editing project prevents
+broken file paths, missing media, and offline link errors.</p>
+<p>A reliable folder template uses two-digit numerical prefixes to
+maintain consistent sorting across operating systems:</p>
+<ul>
+<li><strong>01_PROJECT_FILES:</strong> NLE project files (Premiere Pro,
+DaVinci Resolve, Final Cut Pro), autosaves, and project archive
+packages.</li>
+<li><strong>02_FOOTAGE:</strong> Raw camera original media sorted by
+shoot date, camera body (e.g., <code>2026-10-15_CAM_A</code>), and card
+reels.</li>
+<li><strong>03_AUDIO:</strong> Production sound, external lavalier/boom
+recordings, sound effects (SFX), ambient beds, and licensed music
+tracks.</li>
+<li><strong>04_GRAPHICS:</strong> Logos, title cards, lower thirds,
+motion graphics templates (MOGRTs), illustrations, and After Effects
+links.</li>
+<li><strong>05_DOCS:</strong> Scripts, storyboards, creative briefs,
+call sheets, and music release licenses.</li>
+<li><strong>06_EXPORTS:</strong> Work-in-progress review cuts, client
+review links, and final master deliverables.</li>
+</ul>
+<h2 id="build-a-numbered-bin-hierarchy-in-your-nle">Build a Numbered Bin
+Hierarchy in Your NLE</h2>
+<p>Inside the NLE, translate your drive structure into a logical,
+clutter-free bin tree. Numbering bins ensures they sort in order of
+workflow progression rather than alphabetically.</p>
+<ul>
+<li><strong>00_ADMIN:</strong> Bins for scratchpads, master reference
+files, and client-provided brand style guides.</li>
+<li><strong>01_SEQS:</strong> Dedicated solely to sequences, divided
+into sub-bins like <code>_ACTIVE</code>, <code>_ARCHIVE</code>, and
+<code>_STRINGOUTS</code>.</li>
+<li><strong>02_FOOTAGE:</strong> Grouped by scene, shoot day, or camera
+setup. Sub-clip selects or multi-camera sync clips reside here.</li>
+<li><strong>03_AUDIO:</strong> Subdivided into <code>DX</code>
+(dialogue), <code>FX</code> (sound effects), <code>MX</code> (music),
+and <code>FOLEY</code>.</li>
+<li><strong>04_GSPX &amp; VFX:</strong> Motion design assets, static
+artwork, overlays, and shots sent for external visual effects
+processing.</li>
+<li><strong>05_COLOR &amp; FINISHING:</strong> Adjustment layers, LUTs,
+and conform roundtrip files for grading.</li>
+</ul>
+<h2 id="standardize-sequence-naming-and-versioning">Standardize Sequence
+Naming and Versioning</h2>
+<p>Timeline management requires clear naming syntax to prevent
+accidentally overwriting work or exporting outdated cuts. Avoid generic
+titles like "Final_Cut_v2".</p>
+<p>Adopt a descriptive naming convention:</p>
+<p><code>[PROJECT]_[ASPECT/DELIVERABLE]_[STAGE]_[VERSION]_[DATE]</code></p>
+<p>For example: <code>NikeAir_16x9_RoughCut_v01_20261015</code></p>
+<h3 id="best-practices-for-timeline-management">Best Practices for
+Timeline Management</h3>
+<ol type="1">
+<li><strong>Duplicate Before Major Revisions:</strong> Never radically
+change an active cut on the same sequence. Duplicate the sequence,
+increment the version number (e.g., <code>v01</code> to
+<code>v02</code>), and move the prior version to the
+<code>_ARCHIVE</code> bin.</li>
+<li><strong>Use Stringouts for Selects:</strong> Build sequence
+"stringouts" (chronological assemblies of raw takes or selects) to scrub
+and pull favored moments onto the main timeline without digging through
+raw bins.</li>
+<li><strong>Lock Down Track Routing:</strong> Establish fixed vertical
+track assignments across all project timelines:</li>
+</ol>
+<ul>
+<li><strong>V1–V3:</strong> Primary dialogue, A-roll, and core visual
+narrative.</li>
+<li><strong>V4–V6:</strong> B-roll, cutaways, and secondary camera
+angles.</li>
+<li><strong>V7+:</strong> Motion graphics, titles, and adjustment
+layers.</li>
+<li><strong>A1–A4:</strong> Production dialogue and sync sound (split by
+speaker).</li>
+<li><strong>A5–A8:</strong> Sound design, ambient audio, and Foley.</li>
+<li><strong>A9–A12:</strong> Music tracks and score stems.</li>
+</ul>
+<h2 id="apply-color-coding-and-metadata-tagging">Apply Color Coding and
+Metadata Tagging</h2>
+<p>Visual categorization accelerates timeline navigation and bin
+scanning. Assign uniform label colors across your studio or editing
+suite:</p>
+<ul>
+<li><strong>Teal / Blue:</strong> Raw camera A-roll and synchronous
+dialogue.</li>
+<li><strong>Green:</strong> Multicam sync clips and primary synced
+audio.</li>
+<li><strong>Orange / Yellow:</strong> B-roll inserts, archival media,
+and stock footage.</li>
+<li><strong>Magenta / Pink:</strong> Motion graphics, typography, and
+adjustment layers.</li>
+<li><strong>Cyan:</strong> Background ambiance and sound effects.</li>
+<li><strong>Purple:</strong> Score and commercial music cues.</li>
+</ul>
+<p>Consistent metadata tagging—such as adding scene, take, and shot
+rating attributes during ingestion—enables fast search queries via smart
+bins or search filters when dealing with hundreds of hours of raw
+assets.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

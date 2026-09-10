@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Bandwidth for Multi-Stream RAW Video Editing - video-production</title>
+    <meta name="description" content="Editing uncompressed multi-stream RAW video places extreme performance demands on shared and local storage architectures. This article breaks down the mathematical data rates of uncompressed and raw footage, calculates total sustained throughput requirem">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/storage-bandwidth-for-multi-stream-raw-video-editing">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Storage Bandwidth for Multi-Stream RAW Video Editing - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/storage-bandwidth-for-multi-stream-raw-video-editing" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Editing uncompressed multi-stream RAW video places extreme performance demands on shared and local storage architectures. This article breaks down the mathematical data rates of uncompressed and raw footage, calculates total sustained throughput requirem" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="storage-bandwidth-for-multi-stream-raw-video-editing">Storage
+Bandwidth for Multi-Stream RAW Video Editing</h1>
+<p>Editing uncompressed multi-stream RAW video places extreme
+performance demands on shared and local storage architectures. This
+article breaks down the mathematical data rates of uncompressed and raw
+footage, calculates total sustained throughput requirements for
+concurrent multi-camera timelines, and identifies the hardware
+interfaces and drive configurations needed to avoid dropped frames
+during real-time multi-stream playback.</p>
+<hr />
+<h3 id="understanding-the-raw-data-rates">Understanding the Raw Data
+Rates</h3>
+<p>To calculate storage bandwidth, you must distinguish between
+uncompressed RGB files (such as DPX or TIFF sequences) and single-sensor
+uncompressed Bayer RAW.</p>
+<p>For single-sensor uncompressed RAW, the bit depth directly scales
+with resolution and frame rate:</p>
+<p><span class="math display">\[\text{Data Rate (bps)} =
+\text{Horizontal Pixels} \times \text{Vertical Pixels} \times \text{Bit
+Depth} \times \text{Frames Per Second}\]</span></p>
+<p>For uncompressed RGB 4:4:4 formats, each pixel contains three
+discrete color channels, effectively tripling the data load:</p>
+<p><span class="math display">\[\text{Data Rate (bps)} =
+\text{Horizontal Pixels} \times \text{Vertical Pixels} \times \text{Bit
+Depth} \times 3 \times \text{Frames Per Second}\]</span></p>
+<h4 id="baseline-single-stream-bandwidth-at-24-fps-12-bit">Baseline
+Single-Stream Bandwidth (at 24 fps, 12-bit):</h4>
+<ul>
+<li><strong>4K UHD (3840 × 2160) Uncompressed Bayer RAW:</strong> ~298
+MB/s (2.38 Gbps)</li>
+<li><strong>4K UHD (3840 × 2160) Uncompressed 4:4:4 RGB:</strong> ~895
+MB/s (7.16 Gbps)</li>
+<li><strong>8K DCI (8192 × 4320) Uncompressed Bayer RAW:</strong> ~1.27
+GB/s (10.16 Gbps)</li>
+<li><strong>8K DCI (8192 × 4320) Uncompressed 4:4:4 RGB:</strong> ~3.82
+GB/s (30.56 Gbps)</li>
+</ul>
+<p>At higher frame rates (such as 60 fps or 120 fps), these base figures
+multiply by 2.5× and 5× respectively.</p>
+<hr />
+<h3 id="multi-stream-bandwidth-calculations">Multi-Stream Bandwidth
+Calculations</h3>
+<p>Multi-stream editing occurs during multi-camera switching,
+picture-in-picture composites, real-time transitions, and background
+rendering while scrubbing. Production pipelines typically require
+concurrent playback of 3 to 4 streams at minimum, scaling to 9 or 16
+streams for studio multicam.</p>
+<h4 id="1-standard-3-stream-editing-ab-roll-with-transitions">1.
+Standard 3-Stream Editing (A/B Roll with Transitions)</h4>
+<ul>
+<li><strong>4K 12-bit RAW @ 24 fps:</strong> ~894 MB/s sustained</li>
+<li><strong>4K 12-bit RGB @ 24 fps:</strong> ~2.68 GB/s sustained</li>
+<li><strong>8K 12-bit RAW @ 24 fps:</strong> ~3.81 GB/s sustained</li>
+<li><strong>8K 12-bit RGB @ 24 fps:</strong> ~11.46 GB/s sustained</li>
+</ul>
+<h4 id="2-four-camera-4-stream-multicam-sync">2. Four-Camera (4-Stream)
+Multicam Sync</h4>
+<ul>
+<li><strong>4K 12-bit RAW @ 24 fps:</strong> ~1.19 GB/s sustained</li>
+<li><strong>4K 12-bit RGB @ 24 fps:</strong> ~3.58 GB/s sustained</li>
+<li><strong>8K 12-bit RAW @ 24 fps:</strong> ~5.08 GB/s sustained</li>
+<li><strong>8K 12-bit RGB @ 24 fps:</strong> ~15.28 GB/s sustained</li>
+</ul>
+<h4 id="3-high-frame-rate-4-stream-multicam--60-fps">3. High Frame Rate
+(4-Stream Multicam @ 60 fps)</h4>
+<ul>
+<li><strong>4K 12-bit RAW @ 60 fps:</strong> ~2.98 GB/s sustained</li>
+<li><strong>8K 12-bit RAW @ 60 fps:</strong> ~12.70 GB/s sustained</li>
+</ul>
+<hr />
+<h3 id="storage-headroom-and-io-performance-requirements">Storage
+Headroom and I/O Performance Requirements</h3>
+<p>Streaming video data is not strictly linear. File systems introduce
+metadata overhead, and Non-Linear Editors (NLEs) make out-of-order block
+requests when reading multiple independent files simultaneously.</p>
+<ul>
+<li><strong>The 25–30% Headroom Rule:</strong> To prevent dropped
+frames, calculate maximum throughput with a 25% to 30% safety margin
+above the raw data rate. For example, a 4-stream 8K RAW workflow
+requiring 5.08 GB/s demands a storage system capable of at least
+<strong>6.6 GB/s of sustained, non-burst read performance</strong>.</li>
+<li><strong>IOPS and Latency:</strong> While streaming bandwidth
+measures raw volume, multi-stream playback turns sequential access into
+quasi-random access. Storage arrays must deliver low read latency
+(sub-millisecond) to concurrently serve multiple file pointers across
+the disk array.</li>
+</ul>
+<hr />
+<h3 id="infrastructure-and-interconnect-requirements">Infrastructure and
+Interconnect Requirements</h3>
+<p>Traditional 1GbE and 10GbE networking, as well as spinning-disk (HDD)
+RAID setups, are insufficient for multi-stream uncompressed
+workflows.</p>
+<ul>
+<li><strong>Drive Media:</strong> SATA SSDs in RAID arrays can service
+4K multi-stream RAW up to roughly 2 to 3 GB/s. For 8K multi-stream or 4K
+RGB multi-stream setups, <strong>NVMe U.2/U.3 SSDs configured in PCIe
+Gen 4 or Gen 5 RAID arrays</strong> are required to hit the 6 to 16+
+GB/s sustained transfer rates.</li>
+<li><strong>Workstation Interconnects:</strong>
+<ul>
+<li>Direct-attached storage requires <strong>Thunderbolt 4</strong>
+(capped at roughly 3 GB/s real-world read) for light 4K work, or direct
+<strong>PCIe-over-cable / dual-Thunderbolt arrays</strong> for higher
+demands.</li>
+<li>Network Attached Storage (NAS) or Storage Area Networks (SAN)
+require <strong>25GbE</strong> (yielding ~2.7 GB/s real-world),
+<strong>40GbE/50GbE</strong> (~4.5 to 5.5 GB/s), or
+<strong>100GbE</strong> (~11.5 GB/s) per client, or multi-channel
+<strong>32G/64G Fibre Channel</strong> fabrics.</li>
+</ul></li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

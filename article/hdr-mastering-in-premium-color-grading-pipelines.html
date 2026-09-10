@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDR Mastering in Premium Color Grading Pipelines - video-production</title>
+    <meta name="description" content="High Dynamic Range (HDR) mastering fundamentally reshapes the color grading pipeline in premium video production by expanding the range of luminance, contrast, and color volume available to filmmakers. This transition moves post-production beyond legacy">
+    <link rel="canonical" href="https://salivity.github.io/video-production/article/hdr-mastering-in-premium-color-grading-pipelines">
+    <link rel="search" type="application/opensearchdescription+xml" title="video-production" href="/video-production/opensearch.xml">
+    <link rel="icon" href="/video-production/favicon.ico">
+    <link rel="stylesheet" href="/video-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/video-production/css/print.css">
+    <script src="/video-production/js/fuse.min.js"></script>
+    <script src="/video-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <script src="/social/social.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HDR Mastering in Premium Color Grading Pipelines - video-production" />
+    <meta property="og:url" content="https://salivity.github.io/video-production/article/hdr-mastering-in-premium-color-grading-pipelines" />
+    <meta property="og:image:url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/video-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="High Dynamic Range (HDR) mastering fundamentally reshapes the color grading pipeline in premium video production by expanding the range of luminance, contrast, and color volume available to filmmakers. This transition moves post-production beyond legacy" />
+    <link rel="manifest" href="/video-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/video-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>video-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="/video-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="hdr-mastering-in-premium-color-grading-pipelines">HDR Mastering
+in Premium Color Grading Pipelines</h1>
+<p>High Dynamic Range (HDR) mastering fundamentally reshapes the color
+grading pipeline in premium video production by expanding the range of
+luminance, contrast, and color volume available to filmmakers. This
+transition moves post-production beyond legacy Standard Dynamic Range
+(SDR) limitations, requiring colorists to implement robust color-managed
+workflows, adapt to new transfer functions, upgrade critical hardware,
+and adopt dual-delivery strategies using dynamic metadata.</p>
+<h3 id="the-shift-to-scene-referred-color-management">The Shift to
+Scene-Referred Color Management</h3>
+<p>Traditional SDR grading traditionally relied on a display-referred
+approach, where adjustments were tailored directly to the specific
+characteristics of Rec. 709 monitors. HDR mastering necessitates a
+scene-referred color management architecture, such as ACES (Academy
+Color Encoding System) or DaVinci YRGB Color Managed.</p>
+<p>In this framework, raw camera data is mapped into a massive,
+device-independent working color space (such as ACEScg or Rec. 2020) and
+a linear or wide-dynamic-range log curve. This isolates the grading
+process from output device limitations, allowing colorists to manipulate
+image data based on actual physical light values rather than a target
+display's narrow constraints.</p>
+<h3 id="managing-expanded-luminance-and-color-volume">Managing Expanded
+Luminance and Color Volume</h3>
+<p>SDR workflows cap luminance at 100 nits. In contrast, HDR mastering
+targets peak brightness levels ranging from 1,000 to 4,000 nits using
+perceptual quantization (PQ, standardized as SMPTE ST 2084) or Hybrid
+Log-Gamma (HLG).</p>
+<p>This dynamic range changes how colorists sculpt contrast:</p>
+<ul>
+<li><strong>Specular Highlights:</strong> Sunlight glints, practical
+light sources, and reflections gain authentic brightness without
+clipping, demanding subtle rolloff control.</li>
+<li><strong>Midtones and Skin Tones:</strong> Even with expanded
+head-room, skin tones and midtones must remain anchored around standard
+light levels to avoid eye fatigue.</li>
+<li><strong>Color Volume:</strong> Color saturation behaves differently
+at higher nit levels. Wider gamuts like DCI-P3 and Rec. 2020 enable
+colors to retain vibrant saturation even in high-luminance zones where
+SDR would wash out to white.</li>
+</ul>
+<h3 id="hardware-and-monitoring-demands">Hardware and Monitoring
+Demands</h3>
+<p>HDR puts strict demands on post-production infrastructure. Grading
+suites require reference-grade mastering monitors capable of sustaining
+target peak luminance, deep black levels (often requiring dual-layer LCD
+or OLED technology), and high color accuracy across 100% of the DCI-P3
+gamut.</p>
+<p>Additionally, processing high-bit-depth (10-bit or 12-bit),
+uncompressed wide-gamut media requires significantly higher GPU
+performance, faster RAID storage throughput, and dedicated I/O hardware
+capable of handling modern 12G-SDI or HDMI 2.1 signaling.</p>
+<h3 id="the-hdr-first-workflow-and-metadata-trims">The HDR-First
+Workflow and Metadata Trims</h3>
+<p>Because standard broadcast, web, and consumer displays still largely
+operate in SDR, premium productions must deliver in both formats. The
+modern pipeline prioritizes grading in HDR first.</p>
+<p>Once the primary HDR grade is locked, automated algorithms generate
+an SDR pass, which the colorist refines using dynamic metadata—most
+commonly Dolby Vision. Through secondary trim controls, the colorist
+adjusts contrast, saturation, and tone mapping parameters specifically
+for SDR displays without altering the underlying HDR master. This
+ensures the creative intent remains intact across all viewing
+environments while eliminating the need to grade the project twice from
+scratch.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/video-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="social-links">
+            </ul>
+        </nav>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/video-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/video-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
